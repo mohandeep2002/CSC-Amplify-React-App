@@ -3,6 +3,8 @@ import { nanoid } from "nanoid";
 import NotesList from "./components/NotesList";
 import Search from "./components/Search";
 import Header from "./components/Header";
+import { BaseHeader } from "./components/BaseHeader";
+import { withAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
 
 const App = () => {
   const [notes, setNotes] = useState([
@@ -72,9 +74,11 @@ const App = () => {
           handleAddNote={addNote}
           handleDeleteNote={deleteNote}
         />
+        <BaseHeader />
       </div>
+      <AmplifySignOut />
     </div>
   );
 };
 
-export default App;
+export default withAuthenticator(App);
