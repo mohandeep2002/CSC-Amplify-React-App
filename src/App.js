@@ -3,6 +3,7 @@ import { nanoid } from "nanoid";
 import NotesList from "./components/NotesList";
 import Search from "./components/Search";
 import Header from "./components/Header";
+import { BaseHeader } from "./components/BaseHeader";
 
 const App = () => {
   const [notes, setNotes] = useState([
@@ -72,6 +73,7 @@ const App = () => {
           handleAddNote={addNote}
           handleDeleteNote={deleteNote}
         />
+        <BaseHeader />
       </div>
     </div>
   );
